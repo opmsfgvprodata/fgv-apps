@@ -21,8 +21,8 @@ namespace FVGApps.Models
         public int? zone_code { get; set; }
         public int? region_code { get; set; }
         public int? estate_code { get; set; }
-        public int? division_code { get; set; }
-        public int? block_code { get; set; }
+        public string division_code { get; set; }
+        public string block_code { get; set; }
         public string worker_group_id { get; set; }
         public string worker_group_name { get; set; }
         public string supervisor_employee_id { get; set; }

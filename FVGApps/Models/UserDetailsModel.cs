@@ -20,16 +20,16 @@ namespace FVGApps.Models
         public string source { get; set; }
         public string is_hq { get; set; }
         public string designation { get; set; }
-        public int department { get; set; }
+        public string department { get; set; }
         public string role_mapping { get; set; }
         public int zone_code { get; set; }
         public int region_code { get; set; }
-        public int estate_code { get; set; }
-        public int division_code { get; set; }
-        public int block_code { get; set; }
+        public string estate_code { get; set; }
+        public string division_code { get; set; }
+        public string block_code { get; set; }
         public string all_estate { get; set; }
-        public int worker_group_id { get; set; }
-        public int worker_group_name { get; set; }
+        public string worker_group_id { get; set; }
+        public string worker_group_name { get; set; }
         public int zone_code1 { get; set; }
         public int region_code1 { get; set; }
         public int estate_code1 { get; set; }

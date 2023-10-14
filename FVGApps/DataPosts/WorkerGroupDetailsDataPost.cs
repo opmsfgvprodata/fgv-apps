@@ -10,7 +10,7 @@ namespace FVGApps.DataPosts
     {
         public string group_id {  get; set; }
         public string name { get; set; }
-        public bool active { get; set; }
+        public string active { get; set; }
         public string estate { get; set; }
         public SupervisorDetails supervisor_details { get; set; }
 

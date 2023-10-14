@@ -22,15 +22,15 @@ namespace FVGApps.BL
         public void RunJob()
         {
             ////BACKOFFICE USER
-            //var userDetails = _userDetailsRepository.GetAllUsers();
-            ////var userDetailsDataPost = UserDetailsDataPostMapping(userDetails.Take(10).ToList());
-            //var userDetailsDataPost = UserDetailsDataPostMapping(userDetails.ToList());
-            //Posting(userDetailsDataPost);
+            var userDetails = _userDetailsRepository.GetAllUsers();
+            //var userDetailsDataPost = UserDetailsDataPostMapping(userDetails.Take(10).ToList());
+            var userDetailsDataPost = UserDetailsDataPostMapping(userDetails.ToList());
+            Posting(userDetailsDataPost);
 
             //USER STATUS
-            var userStatus = _userDetailsRepository.GetAllUsersStatus();
-            var userStatusDataPost = UserStatusDataPostMapping(userStatus.ToList());
-            Posting(userStatusDataPost);
+            //var userStatus = _userDetailsRepository.GetAllUsersStatus();
+            //var userStatusDataPost = UserStatusDataPostMapping(userStatus.ToList());
+            //Posting(userStatusDataPost);
         }
 
         public List<UserDetailsDataPost> UserDetailsDataPostMapping(List<UserDetailsModel> UserDetails)
@@ -44,33 +44,33 @@ namespace FVGApps.BL
                     mobile_number = item.mobile_number,
                     employee_id = item.employee_id,
                     status = item.status,
-                    id_number = item.id_number,
                     id_type = item.id_type,
+                    id_number = item.id_number,
+                    email = item.email,
+                    office_number = item.office_number,
                     company = item.company,
                     source = item.source,
+                    is_hq = item.is_hq,
+                    designation = item.designation.ToString(),
+                    department = item.department,
+                    role_mapping = item.role_mapping,
                     zone_code = item.zone_code.ToString(),
                     region_code = item.region_code.ToString(),
-                    estate_code = item.estate_code.ToString(),
-                    division_code = item.division_code.ToString(),
-                    block_code = item.block_code.ToString(),
+                    estate_code = item.estate_code,
+                    division_code = item.division_code,
+                    block_code = item.block_code,
+                    worker_group_details = new WorkerGroupDetails
+                    {
+                        worker_group_id = item.worker_group_id,
+                        worker_group_name = item.worker_group_name
+                    },
                     allowable_estate = new AllowableEstate
                     {
                         all_estates = item.all_estate,
-                        estate_code = item.estate_code1.ToString(),
-                        region_code = item.region_code1.ToString(),
-                        zone_code = item.zone_code1.ToString()
-                    },
-                    worker_group_details = new WorkerGroupDetails
-                    {
-                        worker_group_id = item.worker_group_id.ToString(),
-                        worker_group_name = item.worker_group_name.ToString()
-                    },
-                    department = item.department.ToString(),
-                    designation = item.designation.ToString(),
-                    email = item.email,
-                    is_hq = item.is_hq,
-                    office_number = item.office_number,
-                    role_mapping = item.role_mapping
+                        estate_code = item.estate_code,
+                        region_code = item.region_code.ToString(),
+                        zone_code = item.zone_code.ToString()
+                    }                        
                 };
                 userDetailsDataPostList.Add(userDetailsDataPost);
             }
@@ -102,7 +102,7 @@ namespace FVGApps.BL
                 var response = client.PostAsync("add-bo/?key=" + _apiKey, new StringContent(output, Encoding.UTF8, "application/json")).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    Console.Write("User Success");
+                    Console.Write("Back Office User/User Status Success");
                 }
                 else
                 {

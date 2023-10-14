@@ -52,8 +52,8 @@ namespace FVGApps.BL
                     zone_code = item.zone_code.ToString(),
                     region_code = item.region_code.ToString(),
                     estate_code = item.estate_code.ToString(),
-                    division_code = item.division_code.ToString(),
-                    block_code = item.block_code.ToString(),
+                    division_code = item.division_code,
+                    block_code = item.block_code,
                     supervisor_details = new SupervisorDetails
                     {
                         supervisor_employee_id = item.supervisor_employee_id,

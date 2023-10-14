@@ -23,14 +23,14 @@ namespace FVGApps
         static void Main(string[] args)
         {
             //WORKER GROUP & WORKER USER
-            //#region Worker Group & Worker Details Posting
-            //_workerDetailsBL.RunJob();
-            //#endregion
-
-            ////USER STATUS & BACKOFFICE USER
-            #region Users Status & Users Details Posting
-            _userDetailsBL.RunJob();
+            #region Worker Group & Worker Details Posting
+            _workerDetailsBL.RunJob();
             #endregion
+
+            //USER STATUS & BACKOFFICE USER
+            //#region Users Status & Users Details Posting
+            //_userDetailsBL.RunJob();
+            //#endregion
 
             Console.ReadLine();
         }

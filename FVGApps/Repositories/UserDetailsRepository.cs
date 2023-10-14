@@ -45,7 +45,7 @@ namespace FVGApps.Repositories
                 con.Close();
                 return userDetailList.ToList();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
