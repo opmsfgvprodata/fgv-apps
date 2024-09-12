@@ -95,6 +95,8 @@ namespace FVGApps.BL
                 {
                     name = item.name,
                     active = item.active,
+                    zone = item.zone, //added by faeza 13.03.2024
+                    region = item.region, //added by faeza 13.03.2024
                     estate = item.estate,
                     group_id = item.group_id,
                     supervisor_details = new SupervisorDetails
@@ -116,6 +118,7 @@ namespace FVGApps.BL
                 string output = JsonConvert.SerializeObject(WorkerDetailsDataPost);
 
                 var response = client.PostAsync("add-workers/?key=" + _apiKey, new StringContent(output, Encoding.UTF8, "application/json")).Result;
+                //Console.Write(response);
                 if (response.IsSuccessStatusCode)
                 {
                     Console.Write("Worker Success");
