@@ -66,25 +66,26 @@ namespace FVGApps.BL
                     },
                     documents = new Documents
                     {
-                        contract_expiry_date = !string.IsNullOrEmpty(item.contract_expiry_date.ToString()) ? item.contract_expiry_date.Value.ToString("yyyy-MM-dd") : null,
-                        contract_start_date = !string.IsNullOrEmpty(item.contract_start_date.ToString()) ? item.contract_start_date.Value.ToString("yyyy-MM-dd") : null,
-                        passport_expiry_date = !string.IsNullOrEmpty(item.passport_expiry_date.ToString()) ? item.passport_expiry_date.Value.ToString("yyyy-MM-dd") : null,
-                        passport_renewal_start_date = !string.IsNullOrEmpty(item.passport_renewal_start_date.ToString()) ? item.passport_renewal_start_date.Value.ToString("yyyy-MM-dd") : null,
                         passport_start_date = !string.IsNullOrEmpty(item.passport_start_date.ToString()) ? item.passport_start_date.Value.ToString("yyyy-MM-dd") : null,
-                        permit_expiry_date = !string.IsNullOrEmpty(item.permit_expiry_date.ToString()) ? item.permit_expiry_date.Value.ToString("yyyy-MM-dd") : null,
-                        permit_renewal_start_date = !string.IsNullOrEmpty(item.permit_renewal_status_date.ToString()) ? item.permit_renewal_status_date.Value.ToString("yyyy-MM-dd") : null,
-                        permit_start_date = !string.IsNullOrEmpty(item.permit_start_date.ToString()) ? item.permit_start_date.Value.ToString("yyyy-MM-dd") : null,
-                        passport_renewal_status = item.passport_renewal_status,
+                        passport_expiry_date = !string.IsNullOrEmpty(item.passport_expiry_date.ToString()) ? item.passport_expiry_date.Value.ToString("yyyy-MM-dd") : null,
                         passport_status = item.passport_status,
+                        passport_renewal_status = item.passport_renewal_status,
+                        passport_renewal_start_date = !string.IsNullOrEmpty(item.passport_renewal_start_date.ToString()) ? item.passport_renewal_start_date.Value.ToString("yyyy-MM-dd") : null,
                         permit_number = item.permit_number,
+                        permit_start_date = !string.IsNullOrEmpty(item.permit_start_date.ToString()) ? item.permit_start_date.Value.ToString("yyyy-MM-dd") : null,
+                        permit_expiry_date = !string.IsNullOrEmpty(item.permit_expiry_date.ToString()) ? item.permit_expiry_date.Value.ToString("yyyy-MM-dd") : null,
+                        permit_status = item.permit_status,
                         permit_renewal_status = item.permit_renewal_status,
-                        permit_status = item.permit_status
+                        permit_renewal_start_date = !string.IsNullOrEmpty(item.permit_renewal_start_date.ToString()) ? item.permit_renewal_start_date.Value.ToString("yyyy-MM-dd") : null,
+                        contract_start_date = !string.IsNullOrEmpty(item.contract_start_date.ToString()) ? item.contract_start_date.Value.ToString("yyyy-MM-dd") : null,
+                        contract_expiry_date = !string.IsNullOrEmpty(item.contract_expiry_date.ToString()) ? item.contract_expiry_date.Value.ToString("yyyy-MM-dd") : null
                     }
                 };
                 workerDetailsDataPostList.Add(workerDetailsDataPost);
             }
             return workerDetailsDataPostList;
         }
+
 
         public List<WorkerGroupDetailsDataPost> WorkerGroupDetailsDataPostMapping(List<WorkerGroupDetailsModel> WorkerGroupDetails)
         {
@@ -93,12 +94,13 @@ namespace FVGApps.BL
             {
                 var workerGroupDetailsDataPost = new WorkerGroupDetailsDataPost
                 {
+                    group_id = item.group_id,
                     name = item.name,
                     active = item.active,
+                    company = item.company, //added by faeza 09.12.2024
                     zone = item.zone, //added by faeza 13.03.2024
                     region = item.region, //added by faeza 13.03.2024
-                    estate = item.estate,
-                    group_id = item.group_id,
+                    estate = item.estate,                    
                     supervisor_details = new SupervisorDetails
                     {
                         supervisor_employee_id = item.supervisor_employee_id,

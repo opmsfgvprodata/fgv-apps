@@ -37,7 +37,7 @@ namespace FVGApps.Models
         public DateTime? permit_expiry_date { get; set; }
         public string permit_status { get; set; }
         public string permit_renewal_status { get; set; }
-        public DateTime? permit_renewal_status_date { get; set; }
+        public DateTime? permit_renewal_start_date { get; set; }
         public DateTime? contract_start_date { get; set; }
         public DateTime? contract_expiry_date { get; set; }
     }

@@ -67,9 +67,9 @@ namespace FVGApps.BL
                     allowable_estate = new AllowableEstate
                     {
                         all_estates = item.all_estate,
-                        estate_code = item.estate_code,
+                        zone_code = item.zone_code.ToString(),
                         region_code = item.region_code.ToString(),
-                        zone_code = item.zone_code.ToString()
+                        estate_code = item.estate_code
                     }                        
                 };
                 userDetailsDataPostList.Add(userDetailsDataPost);
