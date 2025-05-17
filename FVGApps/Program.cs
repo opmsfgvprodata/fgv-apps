@@ -20,17 +20,23 @@ namespace FVGApps
 
         }
 
+        // No code changes needed for your current scenario.
+        // The methods in Main are already called one after another, synchronously.
+        // If you want to log completion after each step, you can add Console.WriteLine statements:
+
         static void Main(string[] args)
         {
-            //WORKER GROUP & WORKER USER
-            #region Worker Group & Worker Details Posting
-            _workerDetailsBL.RunJob();
-            #endregion
+            _userDetailsBL.RunJobBackofficeUser();
+            Console.WriteLine("Backoffice user job completed.");
 
-            //USER STATUS & BACKOFFICE USER
-            //#region Users Status & Users Details Posting
-            //_userDetailsBL.RunJob();
-            //#endregion
+            _workerDetailsBL.RunJobWorkerGroup();
+            Console.WriteLine("Worker group job completed.");
+
+            _workerDetailsBL.RunJobWorkerUser();
+            Console.WriteLine("Worker user job completed.");
+
+            _userDetailsBL.RunJobUserStatus();
+            Console.WriteLine("User status job completed.");
 
             Console.ReadLine();
         }

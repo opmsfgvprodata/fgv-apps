@@ -19,17 +19,20 @@ namespace FVGApps.BL
         {
         }
 
-        public void RunJob()
+        public void RunJobWorkerUser()
         {
             //WORKER USER
             var workerDetails = _workerDetailsRepository.GetAllWorkers();
             var workerDetailsDataPost = WorkerDetailsDataPostMapping(workerDetails.ToList());
             Posting(workerDetailsDataPost);
+        }
 
+        public void RunJobWorkerGroup()
+        {
             //WORKER GROUP
-            //var workerGroupDetails = _workerDetailsRepository.GetAllWorkerGroups();
-            //var workerGroupDetailsDataPost = WorkerGroupDetailsDataPostMapping(workerGroupDetails.ToList());
-            //Posting(workerGroupDetailsDataPost);
+            var workerGroupDetails = _workerDetailsRepository.GetAllWorkerGroups();
+            var workerGroupDetailsDataPost = WorkerGroupDetailsDataPostMapping(workerGroupDetails.ToList());
+            Posting(workerGroupDetailsDataPost);
         }
 
         public List<WorkerDetailsDataPost> WorkerDetailsDataPostMapping(List<WorkerDetailsModel> WorkerDetails)

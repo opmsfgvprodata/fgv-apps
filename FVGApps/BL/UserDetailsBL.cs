@@ -19,18 +19,20 @@ namespace FVGApps.BL
         {
         }
 
-        public void RunJob()
+        public void RunJobBackofficeUser()
         {
             ////BACKOFFICE USER
             var userDetails = _userDetailsRepository.GetAllUsers();
-            //var userDetailsDataPost = UserDetailsDataPostMapping(userDetails.Take(10).ToList());
             var userDetailsDataPost = UserDetailsDataPostMapping(userDetails.ToList());
             Posting(userDetailsDataPost);
+        }
 
+        public void RunJobUserStatus()
+        {
             //USER STATUS
-            //var userStatus = _userDetailsRepository.GetAllUsersStatus();
-            //var userStatusDataPost = UserStatusDataPostMapping(userStatus.ToList());
-            //Posting(userStatusDataPost);
+            var userStatus = _userDetailsRepository.GetAllUsersStatus();
+            var userStatusDataPost = UserStatusDataPostMapping(userStatus.ToList());
+            Posting(userStatusDataPost);
         }
 
         public List<UserDetailsDataPost> UserDetailsDataPostMapping(List<UserDetailsModel> UserDetails)
