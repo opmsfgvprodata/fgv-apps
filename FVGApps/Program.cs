@@ -26,19 +26,18 @@ namespace FVGApps
 
         static void Main(string[] args)
         {
+            Common.Log.SetLogFilePath("mylog.txt");
             _userDetailsBL.RunJobBackofficeUser();
-            Console.WriteLine("Backoffice user job completed.");
+            Common.Log.Write("Backoffice user job completed.");
 
             _workerDetailsBL.RunJobWorkerGroup();
-            Console.WriteLine("Worker group job completed.");
+            Common.Log.Write("Worker group job completed.");
 
             _workerDetailsBL.RunJobWorkerUser();
-            Console.WriteLine("Worker user job completed.");
+            Common.Log.Write("Worker user job completed.");
 
             _userDetailsBL.RunJobUserStatus();
-            Console.WriteLine("User status job completed.");
-
-            Console.ReadLine();
+            Common.Log.Write("User status job completed.");
         }
     }
 }
