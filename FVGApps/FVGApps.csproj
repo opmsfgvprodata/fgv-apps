@@ -55,6 +55,7 @@
     <Compile Include="Base\SubBase.cs" />
     <Compile Include="BL\UserDetailsBL.cs" />
     <Compile Include="BL\WorkerDetailsBL.cs" />
+    <Compile Include="Common\Log.cs" />
     <Compile Include="DataPosts\SupervisorDetails.cs" />
     <Compile Include="DataPosts\UserStatusDataPost.cs" />
     <Compile Include="DataPosts\WorkerGroupDetailsDataPost.cs" />
